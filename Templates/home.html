@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+        <title>Vehicle Colour</title>
+        <style>
+            body{
+                background: #095656;
+                padding-left: 20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-right: 20px;
+            }
+            h1{
+                text-align: center;
+            }
+            #list{
+                font-weight: bold;
+                font-style: italic;
+                font-size: larger;
+
+            }
+            ul{
+                display:inline-block;
+            }
+        </style>
+    </head>
+    
+
+    <body>
+        <div>
+            <h1>Vehicle Colour Prediction</h1>
+            <hr>
+        </div>
+        <div id="list">
+            <p>The colours into which the vehicle can be classified into are:</p>
+            <ul>
+                <li>Black</li>
+                <li>Blue</li>
+                <li>Gray</li>
+                <li>Green</li>
+            </ul>
+            <ul>
+                <li>Orange</li>
+                <li>Red</li>
+                <li>White</li>
+                <li>Yellow</li>
+                
+            </ul>
+            <hr>
+            <p>Upload the image to predict the colour of the vehicle:</p>
+            <form action="" method=post enctype=multipart/form-data>
+            <input type=file name=file>
+            <input type=submit value=Upload>
+            </form>
+        </div>
+        <p style="margin-left: auto; margin-right: auto;"></p>
+        <div class="row">
+        <div class="col-lg-4">
+          <div class="page-header">
+            <h3 id="tables">Result</h3>
+          </div>
+          <div class="bs-component">
+            <table class="table table-hover">
+                <tr class="table-active">
+                  <th scope="col">Image</th>
+                  <th scope="col">Prediction</th>
+                </tr>
+                <tr>
+                    <th scope="row"> <img width="224" height="224" src="{{imagesource}}" /> </th>
+                    <td> {{label}} </td>
+                  </tr>
+            </table> 
+        </div>
+      </div>
+    </body>
+</html>
